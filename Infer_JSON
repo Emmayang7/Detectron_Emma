@@ -68,7 +68,7 @@ def video_frame(args):  #Yunhan Yang
         #image now is matrix
         if count % args.process_rate == 0:
             cv2.imwrite(args.im_or_folder+ "frame%d.jpg" % total, image)  # save frame as JPEG file in a folder
-                total += 1
+            total += 1
         count += 1
     return total-1
 
@@ -148,8 +148,8 @@ def parse_args():
                         
     if len(sys.argv) == 1:
         parser.print_help()
-            sys.exit(1)
-        return parser.parse_args()
+        sys.exit(1)
+    return parser.parse_args()
 
 
 def main(args):
