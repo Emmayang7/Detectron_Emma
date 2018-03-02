@@ -1,0 +1,25 @@
+Run location: /home/emma/detectron
+
+Run command:
+Sample input:
+python2 tools/infer_json.py     --cfg configs/12_2017_baselines/e2e_mask_rcnn_R-101-FPN_2x.yaml   --image-ext jpg     --wts https://s3-us-west-2.amazonaws.com/detectron/35861858/12_2017_baselines/e2e_mask_rcnn_R-101-FPN_2x.yaml.02_32_51.SgT4y1cO/output/train/coco_2014_train:coco_2014_valminusminival/generalized_rcnn/model_final.pkl     --src_video_path /home/emma/Desktop/test_videos/vpc_22_1042_.wmv    --output_format test_output.mp4   --resize_ratio 0.5   --processing_step 300   --dst_video_path /tmp/json_result/   --dst_video_fps 24   /home/emma/emmatest/
+
+The last input /home/emma/emmatest/ in sample input, you can provide a random folder since it saves the video frame as jpg from the input video
+
+Argument Usage:
+src_video_path: the path of the video to be processed
+resize_ratio (e.g. if this value = 0.5, your code will resize each frame to half of the original size)
+processing_step (e.g. if this value = 5, Detectron will process one out of five frames)
+dst_video_path: the output path of the result json
+[Will delete] dst_video_fps
+[Will delete] output_format
+
+
+Result:
+--dst_video_path : put the folder you want to save the result
+  (1)result contains: all detectron processed jpg images as frame0.jpg.jpg, frame1.jpg.jpg
+                      json output: json_data.json
+                      
+                      
+Future:
+Will become a class contains two function: (1)detectron process (2)contour output in json
